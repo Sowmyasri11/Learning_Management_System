@@ -1,0 +1,152 @@
+INSERT INTO lms.Users (user_id, name, email, role) VALUES
+(1,'Amit','amit@gmail.com','student'),
+(2,'Sita','sita@gmail.com','student'),
+(3,'Rahul','rahul@gmail.com','student'),
+(4,'Priya','priya@gmail.com','student'),
+(5,'Kiran','kiran@gmail.com','student'),
+(6,'Anjali','anjali@gmail.com','student'),
+(7,'Vikram','vikram@gmail.com','student'),
+(8,'Sneha','sneha@gmail.com','student'),
+(9,'Ravi','ravi@gmail.com','student'),
+(10,'Meena','meena@gmail.com','student'),
+(11,'Arjun','arjun@gmail.com','instructor'),
+(12,'Divya','divya@gmail.com','instructor'),
+(13,'Karthik','karthik@gmail.com','instructor'),
+(14,'Pooja','pooja@gmail.com','student'),
+(15,'Manoj','manoj@gmail.com','student'),
+(16,'Neha','neha@gmail.com','student'),
+(17,'Surya','surya@gmail.com','student'),
+(18,'Lakshmi','lakshmi@gmail.com','student'),
+(19,'Ramesh','ramesh@gmail.com','student'),
+(20,'Geetha','geetha@gmail.com','student');
+
+
+INSERT INTO lms.Courses (course_id, title, description, instructor_id, user_id) VALUES
+(101,'SQL Basics','Intro to SQL',11,11),
+(102,'Advanced SQL','Window functions',11,11),
+(103,'Python Basics','Learn Python',12,12),
+(104,'Machine Learning','ML concepts',12,12),
+(105,'Data Structures','Core DS',13,13),
+(106,'Java Programming','OOP concepts',13,13),
+(107,'Web Development','HTML CSS JS',11,11),
+(108,'Cloud Computing','AWS basics',12,12),
+(109,'Data Analytics','Power BI',13,13),
+(110,'AI Fundamentals','AI intro',12,12),
+(111,'DBMS','Database concepts',11,11),
+(112,'Operating System','OS basics',13,13),
+(113,'Networking','Computer networks',11,11),
+(114,'Big Data','Hadoop & Spark',12,12),
+(115,'DevOps','CI/CD tools',13,13);
+
+
+USE LMSDATABASE;
+
+
+
+INSERT INTO lms.Lessons (lesson_id, course_id, title, content, lesson_order) VALUES
+(1,101,'Intro SQL','Basics',1),
+(2,101,'SELECT Query','Querying',2),
+(3,102,'Window Functions','Advanced',1),
+(4,103,'Python Intro','Basics',1),
+(5,103,'Loops','Control flow',2),
+(6,104,'ML Intro','Concepts',1),
+(7,105,'Arrays','DS',1),
+(8,105,'Linked List','DS',2),
+(9,106,'OOP','Java',1),
+(10,107,'HTML','Web',1),
+(11,107,'CSS','Styling',2),
+(12,108,'Cloud Intro','AWS',1),
+(13,109,'Power BI','Analytics',1),
+(14,110,'AI Intro','AI',1),
+(15,111,'Normalization','DBMS',1),
+(16,112,'Processes','OS',1),
+(17,113,'OSI Model','Networking',1),
+(18,114,'Hadoop','Big Data',1),
+(19,115,'CI/CD','DevOps',1),
+(20,101,'JOINS','SQL',3);
+
+
+INSERT INTO lms.Enrollments (enrollment_id, user_id, course_id, enrolled_at, status) VALUES
+(1,1,101,'2026-04-01','active'),
+(2,2,101,'2026-04-01','active'),
+(3,3,102,'2026-04-02','active'),
+(4,4,103,'2026-04-02','active'),
+(5,5,104,'2026-04-03','active'),
+(6,6,105,'2026-04-03','active'),
+(7,7,106,'2026-04-04','active'),
+(8,8,107,'2026-04-04','active'),
+(9,9,108,'2026-04-05','active'),
+(10,10,109,'2026-04-05','active'),
+(11,14,110,'2026-04-06','active'),
+(12,15,111,'2026-04-06','active'),
+(13,16,112,'2026-04-07','active'),
+(14,17,113,'2026-04-07','active'),
+(15,18,114,'2026-04-08','active'),
+(16,19,115,'2026-04-08','active'),
+(17,20,101,'2026-04-09','active'),
+(18,1,102,'2026-04-09','active'),
+(19,2,103,'2026-04-10','active'),
+(20,3,104,'2026-04-10','active');
+
+
+INSERT INTO lms.Assesments (assessment_id, course_id, title, total_marks) VALUES
+(1,101,'SQL Test',100),
+(2,102,'Advanced SQL Test',100),
+(3,103,'Python Quiz',100),
+(4,104,'ML Quiz',100),
+(5,105,'DS Test',100),
+(6,106,'Java Test',100),
+(7,107,'Web Test',100),
+(8,108,'Cloud Test',100),
+(9,109,'Analytics Test',100),
+(10,110,'AI Test',100),
+(11,111,'DBMS Test',100),
+(12,112,'OS Test',100),
+(13,113,'Networking Test',100),
+(14,114,'Big Data Test',100),
+(15,115,'DevOps Test',100);
+
+INSERT INTO lms.AssessmentSubmission (submission_id, assessment_id, user_id, score, submitted_at) VALUES
+(1,1,1,85,'2026-04-02'),
+(2,1,2,78,'2026-04-02'),
+(3,2,3,88,'2026-04-03'),
+(4,3,4,90,'2026-04-03'),
+(5,4,5,75,'2026-04-04'),
+(6,5,6,80,'2026-04-04'),
+(7,6,7,82,'2026-04-05'),
+(8,7,8,77,'2026-04-05'),
+(9,8,9,85,'2026-04-06'),
+(10,9,10,92,'2026-04-06'),
+(11,10,14,88,'2026-04-07'),
+(12,11,15,70,'2026-04-07'),
+(13,12,16,76,'2026-04-08'),
+(14,13,17,89,'2026-04-08'),
+(15,14,18,91,'2026-04-09'),
+(16,15,19,73,'2026-04-09'),
+(17,1,20,84,'2026-04-10'),
+(18,2,1,79,'2026-04-10'),
+(19,3,2,87,'2026-04-11'),
+(20,4,3,90,'2026-04-11');
+
+
+INSERT INTO lms.UserActivity (activity_id, user_id, lesson_id, activity_type, timestamp) VALUES
+(1,1,1,'viewed','2026-04-01'),
+(2,2,2,'viewed','2026-04-01'),
+(3,3,3,'completed','2026-04-02'),
+(4,4,4,'revisited','2026-04-02'),
+(5,5,5,'paused','2026-04-03'),
+(6,6,6,'started','2026-04-03'),
+(7,7,7,'started','2026-04-04'),
+(8,8,8,'revisited','2026-04-04'),
+(9,9,9,'completed','2026-04-05'),
+(10,10,10,'paused','2026-04-05'),
+(11,14,11,'viewed','2026-04-06'),
+(12,15,12,'viewed','2026-04-06'),
+(13,16,13,'started','2026-04-07'),
+(14,17,14,'completed','2026-04-07'),
+(15,18,15,'paused','2026-04-08'),
+(16,19,16,'completed','2026-04-08'),
+(17,20,17,'viewed','2026-04-09'),
+(18,1,18,'revisited','2026-04-09'),
+(19,2,19,'started','2026-04-10'),
+(20,3,20,'paused','2026-04-10');
